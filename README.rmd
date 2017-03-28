@@ -76,7 +76,9 @@ git clone https://github.com/hakimel/reveal.js.git
 
 Tendo disponível a pasta **reveal.js** na mesma pasta do seu notebook, digite o código abaixo:
 ```sh
-jupyter-nbconvert --to slides Análise\ Portal\ da\ Transparência.ipynb --reveal-prefix=reveal.js
+jupyter-nbconvert --to slides <noem_notebook>* --reveal-prefix=reveal.js
+
+*<nome_notebook> no caso deste projeto é Análise\ Portal\ da\ Transparência.ipynb
 ```
 
 O resultado desta operação será um arquivo .html de mesmo nome do seu .ipynb que pode ser aberto por qualquer navegador de internet e servir
