@@ -63,7 +63,7 @@ jupyter notebook
 
 Em seu editor do jupyter notebook defina em *View -> Cell toolbar -> Slidshow*, conforme a figura abaixo:
 
-![]()
+![config_jupyter](https://github.com/ricoms/analise_portal_transparencia/blob/master/imagens/config_jupyter.png)
 
 Após esta definição você verá opções novas em cada bloco do Jupyter, essas opções definirão como esse bloco será apresentado.
 Com essas definições feitas, siga os passos abaixo para criar seu arquivo .html da apresentação.
