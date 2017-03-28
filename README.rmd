@@ -1,0 +1,83 @@
+# README Análise de dados do Portal da Transparência
+
+Como criar uma apresentação básica de análise dos dados do Portal da Transparência
+
+
+# Como utilizar este projeto
+
+## Instalando ferramentas de análise de dados comuns em um ambiente virtual em Python
+
+Testado em Ubuntu 13.10, 14.04 e 16.04.
+
+### Instale os pacotes necessários
+
+```sh
+sudo apt-get install python-pip python-dev
+
+sudo pip install virtualenv virtualenvwrapper
+
+echo "export WORKON_HOME=~/envs" >> ~/.bashrc
+echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
+echo "export PIP_REQUIRE_VIRTUALENV=true" >> ~/.bashrc
+source ~/.bashrc
+```
+
+### Crie um ambiente virtual
+
+```sh
+mkvirtualenv <env_name> -p <path_to_python>*
+
+*<path_to_python> pode ser /usr/bin/python2 ou /usr/bin/python3,
+ou o que precisar.
+```
+
+### Instale os módulos
+
+```sh
+pip install ipython[all]
+
+pip install numpy
+
+pip install pandas
+```
+
+Fonte: http://alexsavio.github.io/data-analysis-tools-install.html
+
+## Tendo já instalado
+
+Acesse seu ambiente virtual com:
+
+```sh
+workon <nome_ambiente>*
+
+*<nome_ambiente> pode ser o nome de algum ambiente já criado
+```
+
+Acesse a ferramenta Jupyter notebook utilizando:
+
+```sh
+jupyter notebook
+```
+
+## Crie uma apresentação html à partir do seu .ipyntbk
+
+Em seu editor do jupyter notebook defina em *View -> Cell toolbar -> Slidshow*, conforme a figura abaixo:
+
+![]()
+
+Após esta definição você verá opções novas em cada bloco do Jupyter, essas opções definirão como esse bloco será apresentado.
+Com essas definições feitas, siga os passos abaixo para criar seu arquivo .html da apresentação.
+
+Primeiro, caso já não tenha o **reveal.js** em seu projeto, precisamos definir o padrão da apresentação, uma saída rápida para isso é clonar
+o repositório **reveal.js**
+```sh
+git clone https://github.com/hakimel/reveal.js.git
+```
+
+Tendo disponível a pasta **reveal.js** na mesma pasta do seu notebook, digite o código abaixo:
+```sh
+jupyter-nbconvert --to slides Análise\ Portal\ da\ Transparência.ipynb --reveal-prefix=reveal.js
+```
+
+O resultado desta operação será um arquivo .html de mesmo nome do seu .ipynb que pode ser aberto por qualquer navegador de internet e servir
+como apresentação.
